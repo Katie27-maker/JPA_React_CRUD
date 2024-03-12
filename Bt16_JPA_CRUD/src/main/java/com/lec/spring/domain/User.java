@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @Builder
 @Entity(name = "TBL_user")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,7 +30,7 @@ public class User {
     @JsonIgnore
     private LocalDateTime regDate;
 
-    // OAuth2
+//     OAuth2
     private String provider;   // 어떤 OAuth2 제공자? Kakao, Naver, Google....
     private String providerId;  // provider 내에서의 고유 id 값
 }

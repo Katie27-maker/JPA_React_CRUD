@@ -1,9 +1,11 @@
 package com.lec.spring.user;
 
 
+import com.lec.spring.config.PrincipalDetails;
 import com.lec.spring.domain.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -44,8 +46,6 @@ public class U {
         System.out.println("\tFile Size : " + file.getSize() + " bytes");  // 용량 (byte)
         System.out.println("\tMIME: " + file.getContentType());  // content type (mime type)
 
-        // 이미지 파일 여부
-        BufferedImage bufferedImage = null;
 
         // 이미지 파일 여부
         BufferedImage bufferedImage = null;
