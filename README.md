@@ -33,8 +33,11 @@ DB-ERD BoardTable CommentTable FileTable MemberTable
 
 🛰️API 설계
 MemberAPI BoardAPI CommentAPI MemberTable
+
 3. 기술 스택
-📌Backend
+4. 
+5. 📌Backend
+
 기술	버전
 Spring Boot	3.1.4
 Spring Web	3.1.0
@@ -43,7 +46,9 @@ Spring Data Jpa	3.0.4
 Bean Validation	3.1.0
 JSON Web Token	0.11.5
 MySQL Connector J	8.0.32
+
 🎨Frontend
+
 기술	버전
 NodeJS	16.16.0
 React	18.2.0
