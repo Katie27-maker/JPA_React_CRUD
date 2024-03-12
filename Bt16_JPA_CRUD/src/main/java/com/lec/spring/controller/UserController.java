@@ -33,7 +33,7 @@ public class UserController {
     //  Security 가 낚아채기 때문에 아래 핸들러는 실행되지 않는다
     @PostMapping("/login")
     public void loginProcess(){
-
+        // ‼ 시큐리티가 적용 시 위 경로로 요청 받게 되면 아래 코드는 진행이 안됨!!!
         System.out.println("POST: /user/login 요청 발생!");
     }
 
@@ -59,12 +59,14 @@ public class UserController {
             , RedirectAttributes redirectAttrs
     ){
         // 검증 에러가 있었다면 redirect 한다
+        System.out.println(user);
         if(result.hasErrors()){
             redirectAttrs.addFlashAttribute("username", user.getUsername());
             redirectAttrs.addFlashAttribute("name", user.getName());
             redirectAttrs.addFlashAttribute("email", user.getEmail());
 
             List<FieldError> errList = result.getFieldErrors();
+            System.out.println(errList);
             for(FieldError err : errList) {
                 redirectAttrs.addFlashAttribute("error", err.getCode());  // 가장 처음에 발견된 에러를 담아ㅣ 보낸다
                 break;
