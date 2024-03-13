@@ -7,3 +7,8 @@ use jpa_react;
 use inseouldb;
 
 show databases ;
+
+select * from tbl_authority;
+
+insert into tbl_authority(name)
+values ("ROLE_MEMBER"),("ROLE_ADMIN")

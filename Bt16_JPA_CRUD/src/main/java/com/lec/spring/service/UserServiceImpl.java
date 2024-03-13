@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
     // username(회원 아이디) 로 User 정보 읽어오기
     @Override
     public User findByUsername(String username) {
-        return null;
+        return userRepository.findByUsername(username);
     }
 
     // 특정 username(회원 아이디) 의 회원이 존재하는지 확인
@@ -52,7 +53,18 @@ public class UserServiceImpl implements UserService {
 
 //    특정 사용자(id) 의 authority(들)
     @Override
-    public List<Authority> selectAuthoritiesById(Long id) {
-        return null;
+    public List<Authority> selectAuthoritiesById(Long id) { // <- 이 id는 Authority의 id가 아닌 User의 id
+
+        User user = userRepository.findById(id).orElse(null);
+        // 아래 코드는 단순히 유저 권한만 찾아서 리턴해줌! => 없는 계정일때 null을 리턴하여 NPE가 발생!
+        // ※ NPE => NullPointException 약자!!! 많이 사용됨
+
+//        return user.getAuthorities();
+
+        // 그래서 아래 코드로 진행
+        if(user != null)    // <- 유저가 존재한다면!
+            return user.getAuthorities(); // 권한 리스트를 반환!
+        // 근데 없는 유저라면... 빈 배열을 반환하여 NPE이 발생 안함!!!
+        return new ArrayList<>();
     }
 }

@@ -26,6 +26,7 @@ public class PrincipalDetailService implements UserDetailsService {
 
         // DB 조회
         User user = userService.findByUsername(username);
+        System.out.println(user);
 
         // 해당 username 의 User 가 DB 에 있었다면
         // UserDetails 를 생성하여 리턴
