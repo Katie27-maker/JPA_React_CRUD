@@ -1,7 +1,7 @@
-게시판 만들기 (Spring boot + React)
+What's 만들기 (Spring boot + React)
 작업기간: 2024.02.12 ~ 진행 중
 
-Spring boot와 Spring boot를 활용한 SPA블로그 프로젝트입니다.
+Spring boot와 React를 활용한 What's앱 클론코딩 프로젝트입니다.
 
 📚목차
 프로젝트 소개와 기능
