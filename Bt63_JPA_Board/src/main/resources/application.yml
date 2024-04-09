@@ -41,21 +41,21 @@ spring:
         registration:
           google:
             client-id: 148208030996-ckfnonbv5uippt5n105bffun4bmrpuhs.apps.googleusercontent.com
-            client-secret: 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
+            client-secret:
             scope:
               - email
               - profile
 
           facebook:
             client-id: 290270110033944  # 앱 ID
-            client-secret: ece7981ebf6c8e4f16ba24a09dfdd0f2  # 앱 시크릿 코드
+            client-secret:   # 앱 시크릿 코드
             scope:
               - email
               - public_profile
 
           naver:
             client-id: 3ctPVlHkLbqMr6VdseZe
-            client-secret: zv0FItz6l3
+            client-secret:
             scope:
               - name
               - email
@@ -88,7 +88,7 @@ app:
 
     # Kakao 로그인 관련 세팅값
     kakao:
-      client-id: 61335c5470325ba740656e9c18f658fc   # 앱 키
+      client-id:    # 앱 키
       redirect-uri: http://localhost:8080/oauth2/kakao/callback  # Redirect URI
       token-uri: https://kauth.kakao.com/oauth/token   # access token 요청 URI
       user-info-uri: https://kapi.kakao.com/v2/user/me   # 사용자 profile 요청 URI
