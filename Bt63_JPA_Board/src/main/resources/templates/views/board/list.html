@@ -62,7 +62,7 @@
             <td><span><a th:href="@{'/board/detail/' + ${post.id}}" th:text="${post.subject}"></a></span> </td>
             <td><span th:text="${post.user.username}"></span></td>
             <td><span th:text="${post.viewCnt}"></span></td>
-            <td><span th:text="${#temporals.format(post.regDate, 'yyyy-MM-dd HH:mm:ss')}"></span></td>
+            <td><span th:text="${#temporals.format(post.regDate, 'yyyy-MM-dd')}"></span></td>
         </tr>
 
         </tbody>
