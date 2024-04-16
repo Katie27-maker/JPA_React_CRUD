@@ -10,6 +10,7 @@ import com.lec.spring.listener.Auditable;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -26,5 +27,10 @@ public class BaseEntity implements Auditable {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
     @JsonProperty("regdate")
     private LocalDateTime regDate;
+
+    @PrePersist
+    public void setDefault() {
+        this.regDate = LocalDateTime.now();
+    }
 
 }

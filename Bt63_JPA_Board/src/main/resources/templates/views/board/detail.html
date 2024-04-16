@@ -27,7 +27,7 @@
 
         <script th:src="@{/js/detail.js}"></script>
 
-        <title>조회 - [[${post.subject}]]</title>
+        <title>Detail - [[${post.subject}]]</title>
     </head>
 
     <body>
@@ -38,9 +38,9 @@
         <h2>조회 - [[${post.subject}]]</h2>
         <hr>
         <div class="mb-3 mt-3 clearfix">
-            <span class="float-start me-2">id: [[${post.id}]]</span>
-            <span class="float-end ms-4">작성일: [[${#temporals.format(post.regDate, 'yyyy-MM-dd HH:mm:ss')}]]</span>
-            <span class="float-end">조회수: [[${post.viewCnt}]]</span>
+            <span class="float-start me-2">No. [[${post.id}]]</span>
+            <span class="float-end ms-4">작성일 : [[${#temporals.format(post.regDate, 'yyyy-MM-dd HH:mm:ss')}]]</span>
+            <span class="float-end">조회수 : [[${post.viewCnt}]]</span>
         </div>
 
         <section>

@@ -20,6 +20,7 @@ import java.util.Map;
 // Controller layer
 //  request 처리 ~ response
 @Controller
+@CrossOrigin
 @RequestMapping("/board")
 public class BoardController {
 
@@ -109,6 +110,7 @@ public class BoardController {
 
     @PostMapping("/delete")
     public String deleteOk(Long id, Model model){
+        System.out.println(id + "id찍은 곳임");
         int result = boardService.deleteById(id);
         model.addAttribute("result", result);
         return "board/deleteOk";

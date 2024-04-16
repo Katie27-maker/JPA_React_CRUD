@@ -15,9 +15,9 @@ public class Attachment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;  // PK
-
-    @Column(name = "post_id")
-    private Long post;  // 어느글의 첨부파일 (FK)
+    
+    @ManyToOne
+    private Post post;  // 어느글의 첨부파일 (FK)
 
     @Column(nullable = false)
     private String sourcename; // 원본 파일명

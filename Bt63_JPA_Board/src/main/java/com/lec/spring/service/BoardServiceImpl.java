@@ -87,10 +87,11 @@ public class BoardServiceImpl implements BoardService {
 
                 // 물리적인 파일 저장
                 Attachment file = upload(e.getValue());
+                Post post = postRepository.findById(id).orElseThrow(()->new NullPointerException("해당하는 게시글이 없습니다."));
 
                 // 성공하면 DB 에도 저장
                 if(file != null){
-                    file.setPost(id);   // FK 설정
+                    file.setPost(post);   // FK 설정
                     attachmentRepository.saveAndFlush(file);    // AndFlush 서버비용  절감
                 }
             }
@@ -161,20 +162,21 @@ public class BoardServiceImpl implements BoardService {
     @Override
     @Transactional  // 이 메소드는 '트랜잭션' 처리
     public Post detail(Long id) {
-        Post post = postRepository.findById(id).orElse(null); // TODO : 읽어오기
-        
-        if(post != null){
-            post.setViewCnt(post.getViewCnt() + 1);
-            postRepository.saveAndFlush(post);      // update
-            // TODO : 조회수 증가
+        // 읽어오기 // 과제 체크 ★
+        Post post = postRepository.findById(id).orElseThrow(RuntimeException::new);
 
-            // 첨부파일(들) 정보 가져오기
-            List<Attachment> fileList = attachmentRepository.findByPost(post.getId());  // TODO
+        if(post != null){
+            // 조회수 증가 // 과제 체크 ★
+            post.setViewCnt(post.getViewCnt()+1L);
+
+            // 첨부파일(들) 정보 가져오기 // 과제 체크 ★
+            List<Attachment> fileList = attachmentRepository.findAllByPost(post);
 
             setImage(fileList);   // 이미지 파일 여부 세팅
             post.setFileList(fileList);
+            postRepository.save(post);
+            System.out.println("디테일 아웃"+post);
         }
-
         return post;
     }
 
@@ -280,7 +282,7 @@ public class BoardServiceImpl implements BoardService {
 
         if(post != null){
             // 첨부파일 정보 가져오기
-            List<Attachment> fileList = attachmentRepository.findByPost(post.getId());
+            List<Attachment> fileList = attachmentRepository.findAllByPost(post);
             setImage(fileList);   // 이미지 파일 여부 세팅
             post.setFileList(fileList);
         }
@@ -343,17 +345,16 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public int deleteById(Long id) {
         int result = 0;
-        Post post = null;  // TODO 존재하는 데이터인지 읽어와보기
+        Post post = postRepository.findById(id).orElseThrow(()-> new NullPointerException("해당되는 게시글이 없습니다."));  // TODO 존재하는 데이터인지 읽어와보기
         if(post != null){  // 존재한다면 삭제 진행.
             // 물리적으로 저장된 첨부파일(들) 삭제
-            List<Attachment> fileList = attachmentRepository.findByPost(id);  // TODO
+            List<Attachment> fileList = attachmentRepository.findAllByPost(post);  // 포스트에 들어간 모든 첨부파일을 찾기
             if(fileList != null && fileList.size() > 0){
                 for(Attachment file : fileList){
                     delFile(file);
                 }
             }
             // 글 삭제
-            // TODO
             postRepository.delete(post);
             result = 1;
         }
