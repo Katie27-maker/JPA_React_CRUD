@@ -75,6 +75,14 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/bt70_JPA_KANBAN" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/bt70_JPA_KANBAN" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
