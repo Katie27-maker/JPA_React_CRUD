@@ -19,6 +19,62 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt63_JPA_Board/build" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt63_JPA_Board/build" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main/templates" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main/templates" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main/templates/views" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt63_JPA_Board/build/resources/main/templates/views" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt64_JPA_Kanban" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt64_JPA_Kanban" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Bt64_JPA_kanban" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/Bt64_JPA_kanban" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
