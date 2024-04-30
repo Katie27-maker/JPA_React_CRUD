@@ -1,0 +1,5 @@
+spring.application.name=bt70_JPA_KANBAN
+
+# ???? ??
+server:
+  port: 8080
