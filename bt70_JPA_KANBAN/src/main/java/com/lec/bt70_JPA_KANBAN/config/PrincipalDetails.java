@@ -3,6 +3,7 @@ package com.lec.bt70_JPA_KANBAN.config;
 
 import com.lec.bt70_JPA_KANBAN.domain.Authority;
 import com.lec.bt70_JPA_KANBAN.domain.User;
+import com.lec.bt70_JPA_KANBAN.service.UserService;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -33,10 +34,10 @@ public class PrincipalDetails implements UserDetails {
     }
 
     // OAuth 로그인용 생성자
-    public PrincipalDetails(User user, Map<String, Object> attributes){
-        this.user = user;    // 이때 User 정보는, 인증 직후 provider 로부터 받은 attributes 를 토대로 생성하게 된다.
-        this.attributes = attributes;
-    }
+//    public PrincipalDetails(User user, Map<String, Object> attributes){
+//        this.user = user;    // 이때 User 정보는, 인증 직후 provider 로부터 받은 attributes 를 토대로 생성하게 된다.
+//        this.attributes = attributes;
+//    }
 
 
     // 해당 User 의 '권한(들)'을 리턴
@@ -105,17 +106,17 @@ public class PrincipalDetails implements UserDetails {
     //-------------------------------------------------------------
     // OAuth2User 를 implement 하면 구현할 메소드
 
-    private Map<String, Object> attributes;     // ← OAuth2User 의 getAttributes() 값
-
-    @Override
-    public String getName() {
-        return null;   // 사용하지 않을 예정
-    }
-
-    @Override
-    public Map<String, Object> getAttributes() {
-        return attributes;  // 어디서 받아올까?  -> 생성자!
-    }
+//    private Map<String, Object> attributes;     // ← OAuth2User 의 getAttributes() 값
+//
+//    @Override
+//    public String getName() {
+//        return null;   // 사용하지 않을 예정
+//    }
+//
+//    @Override
+//    public Map<String, Object> getAttributes() {
+//        return attributes;  // 어디서 받아올까?  -> 생성자!
+//    }
 }
 
 

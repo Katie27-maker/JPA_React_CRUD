@@ -2,6 +2,7 @@ package com.lec.bt70_JPA_KANBAN.config;
 
 
 import com.lec.bt70_JPA_KANBAN.domain.User;
+import com.lec.bt70_JPA_KANBAN.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

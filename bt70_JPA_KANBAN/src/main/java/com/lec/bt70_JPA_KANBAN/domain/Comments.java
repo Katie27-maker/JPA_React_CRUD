@@ -29,6 +29,4 @@ public class Comments {
     @Column(nullable = false)
     private LocalDateTime deleted_at;
 
-
-
 }
