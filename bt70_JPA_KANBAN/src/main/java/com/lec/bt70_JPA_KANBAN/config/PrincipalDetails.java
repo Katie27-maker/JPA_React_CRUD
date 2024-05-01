@@ -1,18 +1,17 @@
 package com.lec.bt70_JPA_KANBAN.config;
 
-import com.lec.spring.domain.Authority;
-import com.lec.spring.domain.User;
-import com.lec.spring.service.UserService;
+
+import com.lec.bt70_JPA_KANBAN.domain.Authority;
+import com.lec.bt70_JPA_KANBAN.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public class PrincipalDetails implements UserDetails, OAuth2User {
+public class PrincipalDetails implements UserDetails {
 
     private UserService userService;
 
