@@ -29,4 +29,10 @@ public class Comments {
     @Column(nullable = false)
     private LocalDateTime deleted_at;
 
+    @ManyToOne
+    private User user_id;
+
+    @ManyToOne
+    private Cards card_id;
+
 }

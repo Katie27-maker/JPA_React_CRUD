@@ -35,6 +35,11 @@ public class Cards {
 
     private LocalDateTime deleted_at;
 
+    @ManyToOne
+    private Colums column_id;
+
+    @ManyToOne
+    private User user_id;
 
 
 }
