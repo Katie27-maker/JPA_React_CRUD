@@ -34,13 +34,17 @@ public class User {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @ToString.Exclude
-    @Builder.Default
     @JsonIgnore
-    private List<Authority> authorities = new ArrayList<>();
+    private List<Authority> authorities;
 
     public void addAuthoriy(Authority... authorities){
         Collections.addAll(this.authorities, authorities);
     }   // 권한 변경
 
     private LocalDateTime delete_at;
+
+    @PrePersist
+    public void setAuthority(){
+        this.authorities.add(new Authority(1L,"ROLE_MEMBER"));
+    }
 }
