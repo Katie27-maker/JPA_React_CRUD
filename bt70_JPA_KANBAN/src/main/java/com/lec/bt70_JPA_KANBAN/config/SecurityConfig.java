@@ -1,6 +1,6 @@
 package com.lec.bt70_JPA_KANBAN.config;
 
-import com.lec.spring.config.oauth.PrincipalOauth2UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,6 @@ public class SecurityConfig {
     // OAuth2 Client
     @Autowired
     private PrincipalOauth2UserService principalOauth2UserService;
-
 
 
 

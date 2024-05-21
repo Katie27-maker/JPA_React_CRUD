@@ -4,7 +4,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Bt16_JPA_CRUD" />
     <file type="web" url="file://$PROJECT_DIR$/Bt63_JPA_Board" />
-    <file type="web" url="file://$PROJECT_DIR$/Bt64_JPA_kanban" />
+    <file type="web" url="file://$PROJECT_DIR$/Bt64_JPA_Kanban" />
+    <file type="web" url="file://$PROJECT_DIR$/bt70_JPA_KANBAN" />
+    <file type="web" url="file://$PROJECT_DIR$/bt75_JPA_ShoppingMall" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
