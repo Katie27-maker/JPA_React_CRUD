@@ -24,6 +24,5 @@ public class Colums {
 
     @ManyToOne(optional = false)    // notnull+빈값이 들어가면 안딤
     @JoinColumn(name = "board_id")
-    @Column(nullable = false)
     private Board board;
 }

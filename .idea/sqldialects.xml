@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/Bt16_JPA_CRUD/ERD/test.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/Bt63_JPA_Board/ERD/test.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/bt70_JPA_KANBAN/ERD/test.sql" dialect="AZURE" />
   </component>
 </project>
